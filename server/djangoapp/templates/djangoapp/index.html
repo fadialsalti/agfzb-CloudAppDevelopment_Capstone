@@ -18,8 +18,8 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
-                  <a class="navbar-brand" href="/about">About</a>
-                  <a class="navbar-brand" href="#">Offline Course</a>
+                  <a class="navbar-brand" href="{% url 'djangoapp:about-view' %}">About Us</a>
+                  <a class="navbar-brand" href="{% url 'djangoapp:contact-view' %}">Contact Us</a>
             </div>
         </div>
     </nav>
