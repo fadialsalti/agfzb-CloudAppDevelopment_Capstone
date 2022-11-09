@@ -1,0 +1,10 @@
+ibmcloud login
+ibmcloud.exe target -g Default
+ibmcloud iam oauth-tokens
+ibmcloud target --cf
+
+ibmcloud fn property get --auth
+whisk auth              15341de2-eeec-4450-ba6c-e34345f67642:iqTLKD3HXAxV0wYsSoSM9gHa5YUxMK5xID50LEeIDxgtF9dsGE3jJJUoX8SEgzmL
+
+ibmcloud fn property get --apihost
+whisk API host          eu-gb.functions.cloud.ibm.com
