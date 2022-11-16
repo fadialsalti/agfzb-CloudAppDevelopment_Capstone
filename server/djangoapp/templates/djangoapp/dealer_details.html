@@ -1,18 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dealership Review</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
+{% extends "base.html" %}
 
-    <body>
-
-    <!--Add a nav bar here -->
-
-    <!-- Add reviews as cards -->
-
-    </body>
-
-</html>
+{% block content %}
+<!-- Add reviews as cards -->
+{% if dealer_reviews %}
+<main class="container">
+    <h1>{{dealer.full_name}}</h1>
+    <div class="card-columns">
+        <div class="card">
+            {% for review in dealer_reviews %}
+            <img class="card-img-left" src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" alt="emoji-sentiment"
+                width="35" height="35">
+            <div class="card-body">
+                <h5 class="card-title">{{review.car_make}}, {{review.car_model}} ({{review.car_year}})</h5>
+                <p class="card-title">{{review.review}}</p>
+                <p class="card-title">By {{review.name}}</p>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% else %}
+<h2 class="display-5 fw-bold">No reviews for {{dealer.full_name}} yet.</h2>
+{% endif %}
+{% if user.is_authenticated %}
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <a href="add_review"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Add review</button></a>
+</div>
+{% endif %}
+{% endblock %}

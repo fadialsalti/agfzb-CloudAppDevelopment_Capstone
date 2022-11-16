@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.core.validators import MinLengthValidator
+import itertools
 
 class CarMake(models.Model):
     name = models.CharField(max_length=30, help_text='Enter a make (e.g. Dodge)', 
@@ -54,6 +55,7 @@ class CarDealer():
 
 # Create a plain Python class `DealerReview` to hold review data
 class DealerReview():
+    newid = itertools.count()
     def __init__(self, dealership, name, id, review, purchase_date=None, car_make=None, car_model=None, car_year=None, purchase=False, sentiment='netural'):
         self.dealership = dealership
         self.name = name
@@ -64,7 +66,7 @@ class DealerReview():
         self.car_model = car_model
         self.car_year = car_year
         self.sentiment = sentiment
-        self.id = id 
+        self.id = next(DealerReview.newid) 
 
     def __str__(self):
         return "Reviewer name: " + self.name + " - review: " + self.review

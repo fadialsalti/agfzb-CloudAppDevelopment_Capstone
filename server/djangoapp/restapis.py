@@ -1,15 +1,17 @@
 import requests
-import json
+import json, os
 # import related models here
 from requests.auth import HTTPBasicAuth
 from .models import CarDealer, DealerReview
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_watson.natural_language_understanding_v1 import Features, SentimentOptions
+# import and load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv('api_key')
 
 # Create a `get_request` to make HTTP GET requests
-# e.g., response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
-#                                     auth=HTTPBasicAuth('apikey', api_key))
 def get_request(url, api_key=None, **kwargs):
     print(kwargs)
     print("GET from {} ".format(url))
@@ -29,7 +31,6 @@ def get_request(url, api_key=None, **kwargs):
     return json_data
 
 # Create a `post_request` to make HTTP POST requests
-# e.g., response = requests.post(url, params=kwargs, json=payload)
 def post_request(url, json_payload, **kwargs):
     print(kwargs)
     print("POST to {} ".format(url))
@@ -78,17 +79,15 @@ def get_dealer_reviews_from_cf(url, dealerId):
     return results
 
 def get_dealer_by_id(url, dealerId):
-    results = []
-    # Call get_request with a URL parameter
-    json_result = get_request(url, dealerId=dealerId)
+    json_result = get_request(url, id=dealerId)
     if json_result:
-        dealer = json_result["result"]
+        dealer_doc = json_result['result']
+        dealer = next(dealer for dealer in dealer_doc if dealer['id'] == dealerId)
         dealer_obj = CarDealer(address=dealer["address"], city=dealer["city"], full_name=dealer["full_name"],
                             id=dealer["id"], lat=dealer["lat"], long=dealer["long"],
                             short_name=dealer["short_name"],
                             st=dealer["st"], zip=dealer["zip"])
-        results.append(dealer_obj)
-    return results
+    return dealer_obj
 
 def get_dealer_by_state(url, state):
     results = []
@@ -106,7 +105,6 @@ def get_dealer_by_state(url, state):
 # Create an `analyze_review_sentiments` method to call Watson NLU and analyze text
 def analyze_review_sentiments(text):
     url = "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/4db1c8c8-6c6d-415f-a81d-d4d6fcab07c0" 
-    api_key = "apyfhLYItnda81isRM0M2d6IA-K3S7ZSxjCWX5Zf1OHt" 
     authenticator = IAMAuthenticator(api_key) 
     natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01', authenticator=authenticator) 
     natural_language_understanding.set_service_url(url) 

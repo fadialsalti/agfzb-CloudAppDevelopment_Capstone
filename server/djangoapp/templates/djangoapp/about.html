@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<h1>
-    Welcome to Best Cars dealership, home to the best cars in North America. We sell domestic and imported cars at
-    reasonable prices.
-</h1>
-
-</html>
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+  <img class="d-block mx-auto mb-4" src="https://img.freepik.com/free-vector/flat-design-car-dealer-logo_23-2149338508.jpg?w=2000" alt="car-dealer-logo" width="300" height="250">
+  <h1 class="display-5 fw-bold">Who are we?</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Welcome to Best Cars dealership, home to the best cars in North America. We sell domestic and imported cars at
+        reasonable prices.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
