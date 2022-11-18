@@ -113,12 +113,11 @@ def add_review(request, dealer_id):
             if "purchasecheck" in request.POST:
                 if request.POST["purchasecheck"] == 'on':
                     payload["purchase"] = True
-            payload["purchase_date"] = request.POST["purchasedate"]
+                    payload["car_make"] = car.make.name
+                    payload["car_model"] = car.name
+                    payload["car_year"] = int(car.year.strftime("%Y"))
+                    payload["purchase_date"] = request.POST["purchasedate"]
             payload["id"] = dealer_id + 1
-            payload["car_make"] = car.make.name
-            payload["car_model"] = car.name
-            payload["car_year"] = int(car.year.strftime("%Y"))
-
             new_payload = {}
             new_payload["review"] = payload
             review_post_url = "https://eu-gb.functions.appdomain.cloud/api/v1/web/eng_fadi77%40hotmail.com_dev/dealership-package/post-review"
