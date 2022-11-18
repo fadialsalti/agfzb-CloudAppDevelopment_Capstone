@@ -2,9 +2,9 @@
 
 {% block content %}
 <form action="{% url 'djangoapp:registration' %}" method="post">
+    {% csrf_token %}
     <div class="container">
         <!--Style root div with .container class -->
-        {% csrf_token %}
         <h1>Sign Up</h1>
         <hr>
         <div class="form-group">
