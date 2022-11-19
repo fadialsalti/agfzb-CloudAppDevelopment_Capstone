@@ -24,11 +24,11 @@ SECRET_KEY = 'ao5z(o(z@cvzodm99d32jkxa5e8a1!q_4sqss5-a%n6tg$#h$+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-unchained.eu-gb.cf.appdomain.cloud', '34.27.210.90']
-CSRF_TRUSTED_ORIGINS = ['https://engfadi77-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',"http://django-unchained.eu-gb.cf.appdomain.cloud",'https://*.127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-unchained.eu-gb.cf.appdomain.cloud', 'https://engfadi77-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/*', "https://engfadi77-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai"]
+CSRF_TRUSTED_ORIGINS = ["https://engfadi77-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai", "https://*.proxy.cognitiveclass.ai", "https://*.proxy.cognitiveclass.ai/*", 'https://*.127.0.0.1']
+
 
 # Application definition
 

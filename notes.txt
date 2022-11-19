@@ -8,3 +8,30 @@ whisk auth              15341de2-eeec-4450-ba6c-e34345f67642:iqTLKD3HXAxV0wYsSoS
 
 ibmcloud fn property get --apihost
 whisk API host          eu-gb.functions.cloud.ibm.com
+
+get dealership: https://eu-gb.functions.appdomain.cloud/api/v1/web/eng_fadi77%40hotmail.com_dev/dealership-package/get-dealership.json?state=Texas
+get review: https://eu-gb.functions.appdomain.cloud/api/v1/web/eng_fadi77%40hotmail.com_dev/dealership-package/get-review.json?id=15
+post review:
+
+$postParams = '{"name": "Assaf Assaf", "dealership": 15, "review": "Nice but very lame", "purchase": true, "purchase_date": "10/10/2022", "car_make": "Lambo", "car_model": "Gerardo", "car_year": 2007 }'
+curl -u 15341de2-eeec-4450-ba6c-e34345f67642:iqTLKD3HXAxV0wYsSoSM9gHa5YUxMK5xID50LEeIDxgtF9dsGE3jJJUoX8SEgzmL -X POST https://eu-gb.functions.cloud.ibm.com/api/v1/namespaces/eng_fadi77%40hotmail.com_dev/actions/dealership-package/post-review?blocking=true -H 'Content-Type: application/json' -d $postParams
+Invoke-WebRequest -UseBasicParsing -Uri https://eu-gb.functions.cloud.ibm.com/api/v1/namespaces/eng_fadi77%40hotmail.com_dev/actions/dealership-package/post-review?blocking=true -ContentType "application/json" -Method Post -Body @postParams
+
+# update deployment on kubernetes
+export MY_NAMESPACE=sn-labs-engfadi77
+kubectl delete deployment dealership
+docker build -t us.icr.io/$MY_NAMESPACE/dealership .
+docker push us.icr.io/$MY_NAMESPACE/dealership
+kubectl apply -f deployment.yaml
+kubectl port-forward deployment.apps/dealership 8000:8000
+
+# push to github from IBM skills network
+git push https://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@github.com/fadialsalti/agfzb-CloudAppDevelopment_Capstone
+
+# configuring docker to upload container images to Google Cloud
+gcloud projects add-iam-policy-binding 'original-folio-325112' `
+    --member=serviceAccount:fadisalti@original-folio-325112.iam.gserviceaccount.com `
+    --role=roles/storage.admin
+gcloud iam service-accounts keys create key.json --iam-account=fadisalti@original-folio-325112.iam.gserviceaccount.com
+gcloud auth activate-service-account fadisalti@original-folio-325112.iam.gserviceaccount.com --key-file=key.json
+gcloud auth configure-docker

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "original-folio-325112",
+  "private_key_id": "7154beaa402fe0b24bae9cacbba1a30807ba0bcf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrLCJd1TbKwNn5\nnP4Ir5yjVGT+XeXeeNO5ZREiSCr9nYrEbhtawxnd0aqK6l4Q6i8vpHFwNbCorX/8\nWOYJsYb0Pm5YEAa1c+ey6wZcvLl3TbaloTB2hWwXmAOtmVSZKj5JX6ti2bBUzVSW\nDtBwLC8bxHs8S3jukKMdttcprF5hEQUiCx7VinJQUtgc/yhkH5pqHkOZJK2vZEFP\nkSvHFAK7kTK2NdweBrh5stC9iv+bqV73Gl23qYGpjRX755IeEojcC0NBUBL8I0sP\nbLrm+qjRA3QCiHypvDLcBjU8zKyUEqAD58qnyjT5kihJBU+wFFvZTldgpL/rb2wK\nLYuilo0bAgMBAAECggEALBaCA4kXQ8HIYvJ8u9//iFIEcT/eJR8Z6XaOozXTXN9n\nDpENmqMF1oxaUM1szQ6EeNDyJuStS8TkYirDlVuUVvR9l1EJaVMhKoQ+b0RswL3T\nfXW29dAHt0wAJoaHs6udv2hUzHElabI5Ry0porq+p3hEBZOq4kd+u/iMEr/Cz10W\nf1YvJ+gtEIk5VFQisb6NR2y033h2AS1A5ta1cPTIPKt9Tu+WXyHUcz98KsK8iYCn\nK7H68MQ7IDMydMNXn9/+3j3zPE9FgwpXJoxpVYHn5+hQhsgzGYucISwNQGqhfsM8\n82/pwxBSbS4/MihgzhiwWMk6Ip7aRnLBCKPQuUPVAQKBgQDn26KPbt+eDhu5bl6x\nFVHRJIOuomlIFEaOVERlKMXnDDWr0Mh1aeESc2MoyfeNMo9oAtTOHoWl9jnYHe7M\nu455MMbAykowGRrNdHokvEQ9C74NhynFNYykgwwPYMy5GGAEpAklPTd5wiYtk5oo\nFAQte/tiZV5zYniJ+l5ZDM6KmQKBgQC8/uA2IiCvAB44MqtHanKQKFV7TOolZisD\nexArNBw5gmj22CDiegdDL/zrfx5ggt2Imhu5SwSePefyxCmZamhq7wQvFDmLQPFI\nsXXdPEGAP1KeTli+OMFOF9JgZH6WZ3xRQ4bZDnRQ+M6NQ/v5aDvh5/oZ7Yy3OO8B\nMPq7uph50wKBgQCa2MO7mWe9Dl0TvZN+HufyjrlnU06O9gOdIMhA6zcotK3PnvOR\n/vFzOh7aafBrm33NED8Bnb7SdRxyqqMGlqhzZdEHhtJ/RvTwjD7a8+V7A7GdJU0P\nSVExude/GX4AjDfsQYVeGoFHTxPiUnadF6kmm2vrbhnjY7tvIwgJ3xS92QKBgBrz\ntgHCSCrst2KIR0i982x/dAFLbLC8qzGp4RpoKgZBhLp/A+GISXTZaRYkYK6euvz6\nDS4VdqkiZuuF8fDA7fch8tTL65DiSAZ32DkemLCzVxLgVWN7MIX0e7nnWu4T//SO\nzrIxj4DkmoAmy847gR6sOExuRfzzD5J566fN6mSlAoGAE10bHGJ4l9rbqKArD6b0\niOK1xkA8EG+lJ79udKa9T2cXIWWwY/d2q+L/WWwftx3Si6nGHrbG5NnXaDKw1gm5\ng0zpMB38titc1Ae3md8ZHcLkxr1Hkehd1qR1njzxV5ak+5SULewz88f6Z0SeRMlr\nE2dfXlgoN6NYDH/ITHubE3s=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fadisalti@original-folio-325112.iam.gserviceaccount.com",
+  "client_id": "111592532157936927690",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fadisalti%40original-folio-325112.iam.gserviceaccount.com"
+}
