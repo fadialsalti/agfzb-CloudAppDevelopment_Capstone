@@ -3,8 +3,8 @@
 {% block content %}
 <!--Add review form here -->
 <form action="{% url 'djangoapp:add_review' dealer.id %}" method="post">
+    {% csrf_token %}
     <div class="container">
-        {% csrf_token %}
         <hr>
         <h1>Post a review about <strong>{{dealer.full_name}}</strong></h1>
         <div class="form-group">

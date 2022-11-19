@@ -27,8 +27,8 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-unchained.eu-gb.cf.appdomain.cloud']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-unchained.eu-gb.cf.appdomain.cloud', '34.27.210.90']
+CSRF_TRUSTED_ORIGINS = ['https://engfadi77-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',"http://django-unchained.eu-gb.cf.appdomain.cloud",'https://*.127.0.0.1', 'localhost']
 
 # Application definition
 
