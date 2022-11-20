@@ -1,4 +1,5 @@
 requests
+python-dotenv
 Django==4.0
 Pillow==8.0.1
 jinja2==3.0
